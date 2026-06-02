@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <div class="product-content">
+        <p> <%= product.product_name %></p>
+        <p> <%= product.product_description %></p>
+        <p> <%= product.author_surname%>, <%= product.author_name  %></p>
+        <p>R<%= product.product_price %></p>
+        <p> <%= product.category_name %></p>
+    </div>
+</body>
+</html>
