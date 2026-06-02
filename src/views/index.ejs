@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <%- include("./partials/head.ejs") %>
 <body>
     <ul>
         <% if (products.length > 0) { %>
             <% products.forEach((product) => { %>
-                <li><%= product.product_name %></li>
+                <a href="/details/<%= product.product_id %>/<%= product.product_name %>">
+                    <li>
+                        <p> <%= product.product_name %></p>
+                        <p> <%= product.product_description %></p>
+                        <p> <%= product.author_surname%>, <%= product.author_name  %></p>
+                        <p>R<%= product.product_price %></p>
+                        <p> <%= product.category_name %></p>
+                    </li>
+                </a>
             <% }) %>
         <% } else { %>
             <p>There are no products yet.</p>
