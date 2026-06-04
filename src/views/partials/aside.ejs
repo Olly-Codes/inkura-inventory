@@ -1,0 +1,50 @@
+<aside class="sidebar-content sidebar">
+    <h3>Filter & Sort</h3>
+    <form action="#" method="POST">
+        <div class="filter-group">
+            <label for="price-range">Max Price: <span id="price-value">100</span></label>
+            <input type="range" id="price-range" min="0" max="100" value="50">
+        </div>
+
+        <div class="filter-group">
+            <h4>Categories</h4>
+            <ul class="category-group">
+                <li>
+                    <label>
+                        <input type="checkbox" name="category" value="Kodomo">Kodomo
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" name="category" value="Shonen">Shonen
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" name="category" value="Shojo">Shojo
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" name="category" value="Seinen">Seinen
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" name="category" value="Josei">Josei
+                    </label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="filter-group">
+            <label for="sortOrder">Sort By Price</label>
+            <select name="sortOrder" id="sortOrder">
+                <option value="asc">Ascending (Low to High)</option>
+                <option value="desc">Descending (High to Low)</option>
+            </select>
+        </div>
+
+        <button type="submit">Apply Filters</button>
+    </form>
+</aside>
