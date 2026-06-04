@@ -2,7 +2,8 @@
 <html lang="en">
     <%- include("./partials/head.ejs") %>
 <body>
-    <div class="product-content">
+    <%- include("./partials/header.ejs") %>
+    <div class="product-content content">
         <p> <%= product.product_name %></p>
         <p> <%= product.product_description %></p>
         <p> <%= product.author_surname%>, <%= product.author_name  %></p>
