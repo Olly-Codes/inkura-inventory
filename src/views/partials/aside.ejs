@@ -1,9 +1,10 @@
 <aside class="sidebar-content sidebar">
     <h3>Filter & Sort</h3>
-    <form action="#" method="POST">
+    <form action="/" method="GET">
         <div class="filter-group">
-            <label for="price-range">Max Price: <span id="price-value">100</span></label>
-            <input type="range" id="price-range" min="0" max="100" value="50">
+            <label for="price-range">Max Price: <span id="price-value"><%= query.MaxPrice %> || 1000</span></label>
+            <input type="hidden" name="maxPrice" id="maxPrice-hidden" value="<%= query.maxPrice || 1000 %>">
+            <input type="range" id="price-range" min="0" max="1000" value="<%= query.maxPrice || 1000 %>" oninput="document.getElementById('maxPrice-hidden').value = this.value; document.getElementById('price-value').innerText = this.value">
         </div>
 
         <div class="filter-group">
@@ -11,27 +12,37 @@
             <ul class="category-group">
                 <li>
                     <label>
-                        <input type="checkbox" name="category" value="Kodomo">Kodomo
+                        <input type="checkbox" name="category" value="Kodomo" 
+                        <%= query.category && query.category.includes('Kodomo') ? 'checked' : '' %>>
+                        Kodomo
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="checkbox" name="category" value="Shonen">Shonen
+                        <input type="checkbox" name="category" value="Shonen"
+                        <%= query.category && query.category.includes('Shonen') ? 'checked' : '' %>>
+                        Shonen
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="checkbox" name="category" value="Shojo">Shojo
+                        <input type="checkbox" name="category" value="Shojo"
+                        <%= query.category && query.category.includes('Shojo') ? 'checked' : '' %>>
+                        Shojo
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="checkbox" name="category" value="Seinen">Seinen
+                        <input type="checkbox" name="category" value="Seinen"
+                        <%= query.category && query.category.includes('Seinen') ? 'checked' : '' %>>
+                        Seinen
                     </label>
                 </li>
                 <li>
                     <label>
-                        <input type="checkbox" name="category" value="Josei">Josei
+                        <input type="checkbox" name="category" value="Josei"
+                        <%= query.category && query.category.includes('Josei') ? 'checked' : '' %>>
+                        Josei
                     </label>
                 </li>
             </ul>
@@ -40,8 +51,10 @@
         <div class="filter-group">
             <label for="sortOrder">Sort By Price</label>
             <select name="sortOrder" id="sortOrder">
-                <option value="asc">Ascending (Low to High)</option>
-                <option value="desc">Descending (High to Low)</option>
+                <option value="asc"
+                <%= query.sortOrder === 'asc' ? 'selected' : '' %>>Ascending (Low to High)</option>
+                <option value="desc"
+                <%= query.sortOrder === 'desc' ? 'selected' : '' %>>Descending (High to Low)</option>
             </select>
         </div>
 
