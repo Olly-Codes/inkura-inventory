@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("node:path");
 const indexRouter = require("./routes/indexRouter")
 const detailsRouter = require("./routes/detailsRouter");
+const categoryRouter = require("./routes/categoryRouter");
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.set("view engine", "ejs");
 
 app.use("/", indexRouter);
 app.use("/details", detailsRouter);
+app.use("/categories", categoryRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, (err) => {
