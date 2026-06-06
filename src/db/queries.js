@@ -69,10 +69,30 @@ const insertCategory = async (category_name, category_description) => {
     );
 }
 
+const getProductCountByCategory = async (category_id) => {
+    const { rows } = await pool.query(`
+        SELECT COUNT(*)
+        FROM products
+        WHERE category_id = $1;
+        `, [category_id]
+    );
+    return parseInt(rows[0].count);
+}
+
+const deleteCategory = async (category_id) => {
+    await pool.query(`
+        DELETE FROM categories
+        WHERE category_id = $1;
+        `, [category_id]
+    );
+}
+
 module.exports = {
     getAllProducts,
     getProduct,
     getFilteredProducts,
     getAllCategories,
-    insertCategory
+    insertCategory,
+    getProductCountByCategory,
+    deleteCategory
 }
