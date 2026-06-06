@@ -30,13 +30,19 @@ exports.productsFiltertGet = async (req, res, next) => {
         };
 
         const products = await db.getFilteredProducts(filters);
+        const dbCategories = await db.getAllCategories();
         const formattedProducts = products.map((product) => {
             return {
                 ...product,
                 product_name: formattedTitle(product.product_name)
             }
         });
-        res.render("index", { title: "Home", products: formattedProducts, query: req.query });
+        res.render("index", { 
+            title: "Home", 
+            products: formattedProducts, 
+            query: req.query,
+            allCategories: dbCategories
+         });
     } catch (err) {
         next(err);
     }
