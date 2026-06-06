@@ -10,41 +10,19 @@
         <div class="filter-group">
             <h4>Categories</h4>
             <ul class="category-group">
-                <li>
-                    <label>
-                        <input type="checkbox" name="category" value="Kodomo" 
-                        <%= query.category && query.category.includes('Kodomo') ? 'checked' : '' %>>
-                        Kodomo
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type="checkbox" name="category" value="Shonen"
-                        <%= query.category && query.category.includes('Shonen') ? 'checked' : '' %>>
-                        Shonen
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type="checkbox" name="category" value="Shojo"
-                        <%= query.category && query.category.includes('Shojo') ? 'checked' : '' %>>
-                        Shojo
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type="checkbox" name="category" value="Seinen"
-                        <%= query.category && query.category.includes('Seinen') ? 'checked' : '' %>>
-                        Seinen
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type="checkbox" name="category" value="Josei"
-                        <%= query.category && query.category.includes('Josei') ? 'checked' : '' %>>
-                        Josei
-                    </label>
-                </li>
+                <% if (allCategories && allCategories.length > 0) { %>
+                    <% allCategories.forEach((category) => { %>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="category" value="<%= category.category_name %>" 
+                                <%= query.category && query.category.includes(category.category_name) ? 'checked' : '' %>>
+                                <%= category.category_name %>
+                            </label>
+                        </li>
+                    <% }); %>
+                <% } else { %>
+                    <li>No categories found</li>
+                <% } %>
             </ul>
         </div>
 
