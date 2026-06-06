@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/header.ejs") %>
+    <div class="category-content content">
+        <ul>
+            <% if (categories.length > 0) { %>
+                <% categories.forEach((category) => { %>
+                    <li>
+                        <p><%= category.category_name %></p>
+                        <p><%= category.category_description %></p>
+                        <form action="/delete/<%= category.category_id %>" method="POST">
+                            <button class="delete-btn btn" type="submit">Delete</button>
+                        </form>
+                    </li>
+                <% }) %>
+            <% } else { %>
+                <p>There are no categories yet</p>
+            <% } %>
+        </ul>
+        <button type="button">Add Category</button>
+
+    </div>
+</body>
+</html>
