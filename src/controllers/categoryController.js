@@ -48,7 +48,7 @@ exports.newCategoryPost = [
         } else {
             try {
                 const { categoryName, categoryDesc }= req.body;
-                console.log(categoryName, categoryDesc);
+                await db.insertCategory(categoryName, categoryDesc);
                 res.redirect("/categories");
             } catch (err) {
                 next(err);
