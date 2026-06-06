@@ -52,8 +52,17 @@ const getFilteredProducts = async ({ categories, sortOrder, maxPrice }) => {
     return rows;
 };
 
+const getAllCategories = async () => {
+    const { rows } = await pool.query(`
+            SELECT * FROM
+            categories;
+        `);
+        return rows;
+}
+
 module.exports = {
     getAllProducts,
     getProduct,
-    getFilteredProducts
+    getFilteredProducts,
+    getAllCategories
 }
