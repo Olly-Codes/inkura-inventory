@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/header.ejs") %>
+    <div class="form-content content">
+        <form action="/categories" method="POST">
+            <label for="categoryName">Name:</label>
+            <input type="text" id="category-name" name="categoryName" placeholder="Name of Category">
+
+            <label for="categoryDesc">Description:</label>
+            <textarea name="categoryDesc" id="category-description" placeholder="Description of category"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
