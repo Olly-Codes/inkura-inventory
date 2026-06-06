@@ -4,6 +4,7 @@
 <body>
     <%- include("./partials/header.ejs") %>
     <div class="product-content content">
+        <img src="<%= product.product_image_url %>" alt="">
         <p> <%= product.product_name %></p>
         <p> <%= product.product_description %></p>
         <p> <%= product.author_surname%>, <%= product.author_name  %></p>

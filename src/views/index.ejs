@@ -10,6 +10,7 @@
                 <% products.forEach((product) => { %>
                     <a href="/details/<%= product.product_id %>/<%= product.product_name %>">
                         <li>
+                            <img src="<%= product.product_image_url %>">
                             <p> <%= product.product_name %></p>
                             <p> <%= product.product_description %></p>
                             <p> <%= product.author_surname%>, <%= product.author_name  %></p>
