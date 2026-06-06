@@ -1,9 +1,17 @@
 const db = require("../db/queries");
+const { formattedTitle } = require("../utils/titleFormatter");
 
 exports.productsListGet = async (req, res, next) => {
     try {
         const products = await db.getAllProducts();
-        res.render("index", {title: "Home", products})
+        const formattedProducts = products.map((product) => {
+            return {
+                ...product,
+                product_name: formattedTitle(product.product_name)
+            }
+        });
+        console.log(formattedTitles);
+        res.render("index", {title: "Home", products: formattedProducts})
     } catch (err) {
         next(err)
     }
@@ -22,7 +30,13 @@ exports.productsFiltertGet = async (req, res, next) => {
         };
 
         const products = await db.getFilteredProducts(filters);
-        res.render("index", { title: "Home", products, query: req.query });
+        const formattedProducts = products.map((product) => {
+            return {
+                ...product,
+                product_name: formattedTitle(product.product_name)
+            }
+        });
+        res.render("index", { title: "Home", products: formattedProducts, query: req.query });
     } catch (err) {
         next(err);
     }
