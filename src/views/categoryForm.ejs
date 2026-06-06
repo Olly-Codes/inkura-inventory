@@ -4,12 +4,13 @@
 <body>
     <%- include("./partials/header.ejs") %>
     <div class="form-content content">
+         <%- include("partials/errors.ejs") %>
         <form action="/categories" method="POST">
             <label for="categoryName">Name:</label>
-            <input type="text" id="category-name" name="categoryName" placeholder="Name of Category">
+            <input type="text" id="category-name" name="categoryName" placeholder="Name of Category" required>
 
             <label for="categoryDesc">Description:</label>
-            <textarea name="categoryDesc" id="category-description" placeholder="Description of category"></textarea>
+            <textarea name="categoryDesc" id="category-description" placeholder="Description of category" required></textarea>
 
             <button type="submit">Submit</button>
         </form>
