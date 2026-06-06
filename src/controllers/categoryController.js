@@ -56,3 +56,22 @@ exports.newCategoryPost = [
         }
     }
 ]
+
+exports.deleteCategoryPost = async (req, res, next) => {
+    try {
+        const { category_id } = req.params;
+        const productCount = await db.getProductCountByCategory(category_id);
+        if (productCount > 0) {
+            const categories = await db.getAllCategories();
+            return res.status(400).render("categories", {
+                title: "Categories",
+                categories,
+                error: "Cannot delete a category that still has products in it"
+            });
+        }
+        await db.deleteCategory(category_id);
+        res.redirect("/categories");
+    } catch (err) {
+        next (err);
+    }
+}
