@@ -60,9 +60,19 @@ const getAllCategories = async () => {
         return rows;
 }
 
+const insertCategory = async (category_name, category_description) => {
+    await pool.query(`
+        INSERT INTO categories (category_name, category_description)
+        VALUES
+            ($1, $2)
+        `, [category_name, category_description]
+    );
+}
+
 module.exports = {
     getAllProducts,
     getProduct,
     getFilteredProducts,
-    getAllCategories
+    getAllCategories,
+    insertCategory
 }
