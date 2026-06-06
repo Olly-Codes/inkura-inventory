@@ -34,7 +34,7 @@ exports.productsFiltertGet = async (req, res, next) => {
         const formattedProducts = products.map((product) => {
             return {
                 ...product,
-                product_name: formattedTitle(product.product_name)
+                formatted_product_name: formattedTitle(product.product_name)
             }
         });
         res.render("index", { 
