@@ -9,3 +9,23 @@ exports.categoriesListGet = async (req, res, next) => {
     }
     
 }
+
+exports.newCategoryGet = async (req, res, next) => {
+    try {
+        res.render("categoryForm", {title: "Category Form" });
+    } catch (err) {
+        next(err)
+    }
+}
+
+exports.newCategoryPost = async (req, res, next) => {
+    try {
+        console.log(req.body);
+        const { categoryName, categoryDesc }= req.body;
+
+        console.log(categoryName, categoryDesc);
+        res.redirect("/categories");
+    } catch (err) {
+        next(err)
+    }
+}
