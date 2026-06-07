@@ -5,4 +5,7 @@ const indexRouter = Router();
 
 indexRouter.get("/", indexController.productsFiltertGet);
 
+indexRouter.get("/about", (req, res) => res.render("about", {title: "About" }));
+indexRouter.get("/contact", (req, res) => res.render("contact", {title: "Contact" }));
+
 module.exports = indexRouter
