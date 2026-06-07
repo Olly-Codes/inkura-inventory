@@ -3,26 +3,36 @@
     <%- include("./partials/head.ejs") %>
 <body>
     <%- include("./partials/header.ejs") %>
-    <%- include("./partials/aside.ejs") %>
     <div class="index-content content">
-        <ul>
-            <% if (products.length > 0) { %>
-                <% products.forEach((product) => { %>
-                    <a href="/details/<%= product.product_id %>/<%= product.product_name %>">
-                        <li>
-                            <img src="<%= product.product_image_url %>">
-                            <p> <%= product.formatted_product_name %></p>
-                            <p> <%= product.product_description %></p>
-                            <p> <%= product.author_surname%>, <%= product.author_name  %></p>
-                            <p>R<%= product.product_price %></p>
-                            <p> <%= product.category_name %></p>
-                        </li>
-                    </a>
-                <% }) %>
-            <% } else { %>
-                <p>There are no products yet.</p>
-            <% } %>
-        </ul>
+        <%- include("./partials/aside.ejs") %>
+        <main class="container">
+            <ul class="product-container">
+                <% if (products.length > 0) { %>
+                    <% products.forEach((product) => { %>
+                        <a href="/details/<%= product.product_id %>/<%= product.product_name %>">
+                            <li class="product-card card">
+                                <img class="product-img img" src="<%= product.product_image_url %>">
+                                <div class="product-info info">
+                                    <div class="product-details details">
+                                        <p class="product-name"> <%= product.formatted_product_name %></p>
+                                        <p class="product-author-surname"> <%= product.author_surname%>, <%= product.author_name  %></p>
+                                    </div>
+                                    <div class="product-desc desc">
+                                        <p> <%= product.product_description %></p>
+                                    </div>
+                                </div>
+                                <div class="product-data data">
+                                    <p class="product-price">R<%= product.product_price %></p>
+                                    <p class="product-category"> <%= product.category_name %></p>
+                                </div>
+                            </li>
+                        </a>
+                    <% }) %>
+                <% } else { %>
+                    <p>There are no products yet.</p>
+                <% } %>
+            </ul>
+        </main>
     </div>
     <%- include("./partials/footer.ejs") %>
 </body>
