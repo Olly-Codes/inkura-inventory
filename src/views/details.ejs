@@ -3,13 +3,31 @@
     <%- include("./partials/head.ejs") %>
 <body>
     <%- include("./partials/header.ejs") %>
-    <div class="product-content content">
-        <img src="<%= product.product_image_url %>" alt="">
-        <p> <%= product.product_name %></p>
-        <p> <%= product.product_description %></p>
-        <p> <%= product.author_surname%>, <%= product.author_name  %></p>
-        <p>R<%= product.product_price %></p>
-        <p> <%= product.category_name %></p>
+    <div class="product-content">
+        <div class="product-detail">
+            <img src="<%= product.product_image_url %>" alt="<%= product.product_name %>">
+            <div class="detail-right">
+                <span class="product-category"><%= product.category_name %></span>
+                <h1 class="detail-title"><%= product.product_name %></h1>
+                <p class="detail-author"><%= product.author_surname %>, <%= product.author_name %></p>
+                <p class="detail-desc"><%= product.product_description %></p>
+                <div class="detail-meta">
+                    <div class="meta-item">
+                        <p class="meta-label">Publisher</p>
+                        <p class="meta-value"><%= product.product_supplier %></p>
+                    </div>
+                    <div class="meta-item">
+                        <p class="meta-label">In Stock</p>
+                        <p class="meta-value"><%= product.product_quantity %> copies</p>
+                    </div>
+                    <div class="meta-item">
+                        <p class="meta-label">Category</p>
+                        <p class="meta-value"><%= product.category_name %></p>
+                    </div>
+                </div>
+                <p class="detail-price">R<%= product.product_price %></p>
+            </div>
+        </div>
     </div>
     <%- include("./partials/footer.ejs") %>
 </body>
