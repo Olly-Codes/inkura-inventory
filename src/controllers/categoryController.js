@@ -30,7 +30,7 @@ exports.categoriesListGet = async (req, res, next) => {
 
 exports.newCategoryGet = async (req, res, next) => {
     try {
-        res.render("categoryForm", {title: "New Category Form" });
+        res.render("categoryForm", {title: "New Category Form", activePage: "" });
     } catch (err) {
         next(err)
     }
