@@ -335,3 +335,62 @@ input[type="checkbox"] {
     align-self: flex-start;
 }
 
+/* ----- FOOTER */
+.site-footer {
+    background-color: var(--bg-surface);
+    border-top: 1px solid var(--border-strong);
+    padding: 20px 80px;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-logo-container {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.footer-logo-jap {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.footer-logo-eng {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.footer-tagline {
+    font-size: 0.75rem;
+    color: var(--text-primary);
+    margin-top: 4px;
+}
+
+.footer-links ul {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    font-size: 0.75rem;
+    color: var(--text-faint);
+    transition: all .2s ease;
+}
+
+.footer-links ul li a:hover {
+    color: var(--text-primary);
+}
+
+.footer-bottom p {
+    font-size: 0.75rem;
+    color: var(--text-primary);
+}
