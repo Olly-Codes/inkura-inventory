@@ -268,3 +268,70 @@ input[type="checkbox"] {
     text-align: center;
 }
 
+/* ----- DETAILS PAGE */
+.product-content {
+    background-color: var(--bg-base);
+    padding: 48px 80px;
+    height: 100vh;
+}
+
+.product-detail {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.detail-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 10px 0 6px 0;
+}
+
+.detail-author {
+    font-size: 1rem;
+    color: var(--text-faint);
+    margin-bottom: 20px;
+}
+
+.detail-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.detail-meta {
+    display: flex;
+    gap: 48px;
+    margin-bottom: 32px;
+}
+
+.meta-label {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 4px;
+}
+
+.meta-value {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.detail-price {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.detail-right .product-category {
+    align-self: flex-start;
+}
+
