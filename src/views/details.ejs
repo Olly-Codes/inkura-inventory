@@ -13,16 +13,20 @@
                 <p class="detail-desc"><%= product.product_description %></p>
                 <div class="detail-meta">
                     <div class="meta-item">
-                        <p class="meta-label">Publisher</p>
-                        <p class="meta-value"><%= product.product_supplier %></p>
-                    </div>
-                    <div class="meta-item">
                         <p class="meta-label">In Stock</p>
                         <p class="meta-value"><%= product.product_quantity %> copies</p>
                     </div>
                     <div class="meta-item">
-                        <p class="meta-label">Category</p>
-                        <p class="meta-value"><%= product.category_name %></p>
+                        <p class="meta-label">Chapters</p>
+                        <p class="meta-value"><%= product.product_chapters %></p>
+                    </div>
+                    <div class="meta-item">
+                        <p class="meta-label">Volumes</p>
+                        <p class="meta-value"><%= product.product_volumes %></p>
+                    </div>
+                    <div class="meta-item">
+                        <p class="meta-label">Status</p>
+                        <p class="meta-value"><%= product.product_status %></p>
                     </div>
                 </div>
                 <p class="detail-price">R<%= product.product_price %></p>
