@@ -21,7 +21,7 @@ const validateCategory = [
 exports.categoriesListGet = async (req, res, next) => {
     try {
         const categories = await db.getAllCategories();
-        res.render("categories", {title: "Categories", categories })
+        res.render("categories", {title: "Categories", categories, activePage: "categories" })
     } catch (err) {
         next(err)
     }

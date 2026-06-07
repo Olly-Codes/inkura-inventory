@@ -11,7 +11,7 @@ exports.productsListGet = async (req, res, next) => {
             }
         });
         console.log(formattedTitles);
-        res.render("index", {title: "Home", products: formattedProducts})
+        res.render("index", {title: "Home", products: formattedProducts, activePage: "home" })
     } catch (err) {
         next(err)
     }
@@ -41,7 +41,8 @@ exports.productsFiltertGet = async (req, res, next) => {
             title: "Home", 
             products: formattedProducts, 
             query: req.query,
-            allCategories: dbCategories
+            allCategories: dbCategories,
+            activePage: "home"
          });
     } catch (err) {
         next(err);

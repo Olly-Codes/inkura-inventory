@@ -16,7 +16,7 @@ exports.productGet = async (req, res, next) => {
             throw error;
         }
 
-        res.render("details", { title: "Details", product: formattedProduct});
+        res.render("details", { title: "Details", product: formattedProduct, activePage: "" });
     } catch (err) {
         next(err)
     }
