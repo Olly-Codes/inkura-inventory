@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("node:path");
+require("dotenv").config();
 const indexRouter = require("./routes/indexRouter")
 const detailsRouter = require("./routes/detailsRouter");
 const categoryRouter = require("./routes/categoryRouter");
@@ -27,6 +28,10 @@ app.use((err, req, res, next) => {
 
     const errorMessage = statusCode === 500
     ? "Something went wrong on our end!" : err.message;
+
+    if (process.env.NODE_ENV !== "production") {
+        console.error(err.stack);
+    }
 
     res.status(statusCode).render("error", {
         title: `Error ${statusCode}`,
