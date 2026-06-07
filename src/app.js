@@ -16,6 +16,24 @@ app.use("/", indexRouter);
 app.use("/details", detailsRouter);
 app.use("/categories", categoryRouter);
 
+app.use((req, res, next) => {
+    const err = new Error("The page you are looking for does not exist");
+    err.statusCode = 404;
+    next(err);
+});
+
+app.use((err, req, res, next) => {
+    const statusCode = err.statusCode || 500;
+
+    const errorMessage = statusCode === 500
+    ? "Something went wrong on our end!" : err.message;
+
+    res.status(statusCode).render("error", {
+        title: `Error ${statusCode}`,
+        message: errorMessage
+    });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, (err) => {
     if (err) {
