@@ -1,8 +1,8 @@
 <aside class="sidebar-content sidebar">
     <h3>Filter & Sort</h3>
-    <form action="/" method="GET">
+    <form class="form" action="/" method="GET">
         <div class="filter-group">
-            <label for="price-range">Max Price: <span id="price-value"><%= query.MaxPrice || 1000%></span></label>
+            <label for="price-range">Max Price: <span id="price-value"><%= query.maxPrice || 1000 %></span></label>
             <input type="hidden" name="maxPrice" id="maxPrice-hidden" value="<%= query.maxPrice || 1000 %>">
             <input type="range" id="price-range" min="0" max="1000" value="<%= query.maxPrice || 1000 %>" oninput="document.getElementById('maxPrice-hidden').value = this.value; document.getElementById('price-value').innerText = this.value">
         </div>
@@ -36,6 +36,6 @@
             </select>
         </div>
 
-        <button type="submit">Apply Filters</button>
+        <button class="filter-btn btn" type="submit">Apply Filters</button>
     </form>
 </aside>
