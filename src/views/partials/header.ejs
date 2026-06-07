@@ -1,17 +1,26 @@
 <header class="header">
     <nav class="navigation">
-        <ul>
+        <ul class="logo-container">
+            <li class="logo-jap logo">
+                <a href="/">インクラ</a>
+            </li>
+            <li class="logo-eng logo">
+                <a href="/">Inkura</a>
+            </li>
+        </ul>
+
+        <ul class="link-container">
             <li>
-                <a href="/">Home</a>
+                <a href="/" class="<%= activePage === "home" ? "active" : "" %>">Home</a>
             </li>
             <li>
-                <a href="/categories">Categories</a>
+                <a href="/categories" class="<%= activePage === "categories" ? "active" : "" %>">Categories</a>
             </li>
             <li>
-                <a href="/about">About</a>
+                <a href="/about" class="<%= activePage === "about" ? "active" : "" %>">About</a>
             </li>
             <li>
-                <a href="/contact">Contact</a>
+                <a href="/contact" class="<%= activePage === "contact" ? "active" : "" %>">Contact</a>
             </li>
         </ul>
     </nav>
