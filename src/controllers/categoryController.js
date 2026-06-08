@@ -21,7 +21,17 @@ const validateCategory = [
 exports.categoriesListGet = async (req, res, next) => {
     try {
         const categories = await db.getAllCategories();
-        res.render("categories", {title: "Categories", categories, activePage: "categories" })
+        
+        const countPromises = categories.map((category) => {
+            return db.getProductCountByCategory(category.category_id);
+        });
+        const counts = await Promise.all(countPromises);
+        res.render("categories", {
+            title: "Categories", 
+            categories, 
+            activePage: "categories",
+            counts
+        })
     } catch (err) {
         next(err)
     }
@@ -44,6 +54,7 @@ exports.newCategoryPost = [
             return res.status(400).render("categoryForm", {
                 title: "New Category Form",
                 errors: validationErrors.array(),
+                activePage: ""
             });
         } else {
             try {
@@ -63,10 +74,17 @@ exports.deleteCategoryPost = async (req, res, next) => {
         const productCount = await db.getProductCountByCategory(category_id);
         if (productCount > 0) {
             const categories = await db.getAllCategories();
+            const countPromises = categories.map((category) => {
+                return db.getProductCountByCategory(category.category_id);
+            });
+            const counts = await Promise.all(countPromises);
+
             return res.status(400).render("categories", {
                 title: "Categories",
                 categories,
-                error: "Cannot delete a category that still has products in it"
+                error: "Cannot delete a category that still has products in it",
+                activePage: "categories",
+                counts
             });
         }
         await db.deleteCategory(category_id);
