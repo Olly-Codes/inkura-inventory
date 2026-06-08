@@ -4,15 +4,33 @@
 <body>
     <%- include("./partials/header.ejs") %>
     <div class="category-content content">
+        <div class="btn-container">
+            <h1>Categories</h1>
+            <a href="/categories/form">
+                <button type="button">Add Category</button>
+            </a>
+        </div>
         <% if (locals.error) { %>
             <p><%= error %></p>
         <% } %>
         <ul>
             <% if (categories.length > 0) { %>
-                <% categories.forEach((category) => { %>
+                <% categories.forEach((category, index) => { %>
                     <li>
-                        <p><%= category.category_name %></p>
-                        <p><%= category.category_description %></p>
+                        <div class="category-details">
+                            <p><%= category.category_name %></p>
+                            <p><%= category.category_description %></p>
+                        </div>
+                        
+                        <% if (counts.length > 0) { %>
+                            <div class="category-count">
+                                <p><%= counts[index] %> title(s)</p>
+                            </div>
+                        <% } else { %>
+                            <div class="category-none">
+                                <p>0 title(s)</p>
+                            </div>
+                        <% } %>
                         <form action="/categories/delete/<%= category.category_id %>" method="POST">
                             <button class="delete-btn btn" type="submit">Delete</button>
                         </form>
@@ -22,10 +40,6 @@
                 <p>There are no categories yet</p>
             <% } %>
         </ul>
-        <a href="/categories/form">
-            <button type="button">Add Category</button>
-        </a>
-
     </div>
     <%- include("./partials/footer.ejs") %>
 </body>
