@@ -443,7 +443,7 @@ input[type="checkbox"] {
     margin: 0 auto;
 
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 .add-title-container {
@@ -817,6 +817,24 @@ input[type="checkbox"] {
         padding: 15px 0px 15px 0px;
         grid-template-columns: 200px 50px 50px;
         gap: 20px;
+    }
+
+    .form-content {
+        align-items: center;
+    }
+
+    .add-title-container {
+        width: 80%;
+        font-size: 0.8rem;
+        padding: 50px 0px 15px 0px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-content form {
+        width: 80%;
     }
 
     .footer-container {
