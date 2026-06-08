@@ -362,11 +362,17 @@ input[type="checkbox"] {
     border-bottom: 1px solid var(--border-strong);
 }
 
-.btn-container h1 {
-    text-transform: uppercase;
+.btn-container-title {
     color: var(--text-muted);
 }
 
+.btn-container-title h1 {
+    color: var(--accent);
+}
+
+.btn-container-title p {
+    text-transform: uppercase;
+}
 .btn-container button {
     text-transform: uppercase;
     color: var(--text-primary);
