@@ -845,6 +845,25 @@ input[type="checkbox"] {
         font-size: 1.2rem;
     }
 
+    .contact-title-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0px 15px 0px;
+    }
+
+    .address-details {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .location, .contact-info {
+        font-size: 1.2rem;
+        color: var(--text-primary);
+        padding: 10px;
+    }
+
     .form-content form {
         width: 80%;
     }
