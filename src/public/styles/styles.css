@@ -26,6 +26,10 @@
     --accent-tint: rgba(226, 23, 29, 0.08);
 }
 
+body, html {
+    background-color: var(--bg-base);
+}
+
 /* ----- HEADER & NAV */
 .header {
     width: 100%;
@@ -260,8 +264,8 @@ input[type="checkbox"] {
 .product-category {
     font-size: 10px;
     text-transform: uppercase;
-    color: var(--accent);
-    background: var(--accent-tint);
+    color: var(--text-primary);
+    background: var(--accent);
     border: 0.5px solid var(--accent-border);
     padding: 4px 9px;
     border-radius: 2px;
@@ -333,6 +337,101 @@ input[type="checkbox"] {
 
 .detail-right .product-category {
     align-self: flex-start;
+}
+
+/* ----- CATEGORIES */
+.category-content {
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: var(--bg-base);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.btn-container {
+    width: 100%;
+    padding: 50px 50px 20px 50px;
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-strong);
+}
+
+.btn-container h1 {
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.btn-container button {
+    text-transform: uppercase;
+    color: var(--text-primary);
+    background: var(--accent);
+    border: 0.5px solid var(--accent-border);
+    padding: 8px 20px;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    transition: all .2s ease;
+}
+
+.btn-container button:hover {
+    opacity: 0.8;
+}
+
+.error-container {
+    width: 100%;
+    margin-top: 20px;
+    padding: 6px 9px;
+    color: var(--text-primary);
+    border-radius: 5px;
+    background-color: var(--accent);
+}
+
+.categories-container {
+    width: 100%;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.categories-container li {
+    display: grid;
+    grid-template-columns: 1fr 200px auto;
+    align-items: center;
+    border-bottom: 1px solid var(--border-strong);
+    padding: 15px;
+}
+
+.category-title {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+}
+
+.category-desc {
+    color: var(--text-muted);
+}
+
+.category-count, .category-none {
+    color: var(--text-muted);
+}
+
+.delete-btn {
+    padding: 10px 12px;
+    background-color: var(--accent);
+    color: var(--text-primary);
+    outline: none;
+    border: 1px solid var(--border-strong);
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
 }
 
 /* ----- FOOTER */
