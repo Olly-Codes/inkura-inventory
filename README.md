@@ -1,6 +1,6 @@
 # インクラ - Inkura
 
-An inventory applicaton built with Node.js, Express, PostgreSQL and EJS. Inkura is a fictional manga storefront that has expanded from a physical store to an online website.
+An inventory applicaton built with Node.js, Express, PostgreSQL and EJS. Inkura is a fictional manga storefront that has expanded from a physical store to an online website. Live Preview: https://inkura-inventory.onrender.com/
 
 ## Overview
 Inkura allows users to browse manga, filter and sort by category and price, and view detailed information on specific manga titles. For now, it allows users to view differnt manga, create new categories and when delete them.
