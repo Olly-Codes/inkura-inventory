@@ -868,6 +868,15 @@ input[type="checkbox"] {
         width: 80%;
     }
 
+    .product-content {
+        padding: 20px;
+        height: auto;
+    }
+
+    .product-detail {
+        grid-template-columns: 1fr;
+    }
+
     .footer-container {
         flex-direction: column;
         gap: 20px;
