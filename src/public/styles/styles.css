@@ -833,6 +833,18 @@ input[type="checkbox"] {
         align-items: center;
     }
 
+    .about-title-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0px 15px 0px;
+    }
+
+    .about-text {
+        font-size: 1.2rem;
+    }
+
     .form-content form {
         width: 80%;
     }
