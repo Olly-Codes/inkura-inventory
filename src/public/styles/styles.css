@@ -877,6 +877,20 @@ input[type="checkbox"] {
         grid-template-columns: 1fr;
     }
 
+    .categories-container li {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        align-items: center;
+
+    }
+
+    .categories-container li form {
+        width: 100%;
+        
+        display: flex;
+        justify-content: right;
+    }
+
     .footer-container {
         flex-direction: column;
         gap: 20px;
