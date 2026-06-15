@@ -103,6 +103,15 @@ const getUserById = async (id) => {
     return rows[0];
 }
 
+const insertUser = async (username, email, password) => {
+    await pool.query(`
+        INSERT INTO users (username, email, password)
+        VALUES
+            ($1, $2, $3)
+        `, [username, email, password]
+    );
+}
+
 module.exports = {
     getAllProducts,
     getProduct,
@@ -112,5 +121,6 @@ module.exports = {
     getProductCountByCategory,
     deleteCategory,
     getUserByEmail,
-    getUserById
+    getUserById,
+    insertUser
 }
