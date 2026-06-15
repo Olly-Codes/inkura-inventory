@@ -98,10 +98,10 @@ const getUserByEmail = async (email) => {
 
 const getUserById = async (id) => {
     const { rows } = await pool.query(`
-        SELECT * FROM users WHERE id = $1`, [id]
+        SELECT * FROM users WHERE user_id = $1`, [id]
     );
     return rows[0];
-}
+}   
 
 const insertUser = async (username, email, password) => {
     await pool.query(`
