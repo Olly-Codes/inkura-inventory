@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head.ejs") %>
+<body>
+    <%- include("../partials/header.ejs") %>
+    <div class="register-content content">
+        <div class="register-title-container">
+            <p>Register</p>
+        </div>
+        <div class="register-form-containter">
+            <form action="/auth/register" method="POST">
+                <div class="username-container">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter username" required>
+                </div>
+                <div class="email-container">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter email" required>
+                </div>
+                <div class="password-container">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter password" required>
+                </div>
+                <div class="confirm-password-container">
+                    <label for="password2">Confirm Password:</label>
+                    <input type="password" id="password2" name="password2" placeholder="Confirm passowrd" required>
+                </div>
+                <div class="register-btn-container">
+                    <input type="submit" value="Register">
+                </div>
+                <div class="register-extra-container">
+                    <a href="/auth/login">Already registered? Login here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <%- include("../partials/footer.ejs") %>
+</body>
+</html>
