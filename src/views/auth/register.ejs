@@ -8,6 +8,7 @@
             <p>Register</p>
         </div>
         <div class="register-form-containter">
+            <%- include("../partials/errors.ejs") %>
             <form action="/auth/register" method="POST">
                 <div class="username-container">
                     <label for="username">Username:</label>
