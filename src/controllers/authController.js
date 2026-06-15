@@ -1,7 +1,7 @@
 const db = require("../config/db/queries");
 const bcrypt = require("bcrypt");
-const flash = require("express-flash");
-const { body, validationResult, matchedData } = require("express-validator");
+const { body, validationResult } = require("express-validator");
+const passport = require("passport");
 
 const validateRegistration = [
     body("username").trim()
@@ -23,7 +23,6 @@ const validateRegistration = [
         return true;
     })
 ];
-
 
 exports.registerGet = async (req, res, next) => {
     try {
@@ -85,3 +84,19 @@ exports.registerPost = [
         }
     }
 ];
+
+exports.logoutGet = (req, res, next) => {
+    req.logOut((err) => {
+        if (err) {
+            return next(err);
+        }
+        req.flash("success_msg", "You have logged out successfully");
+        res.redirect("/auth/login");
+    });
+}
+
+exports.loginPost = passport.authenticate("local", {
+        successRedirect: "/",
+        failureRedirect: "/auth/login",
+        failureFlash: true
+});
