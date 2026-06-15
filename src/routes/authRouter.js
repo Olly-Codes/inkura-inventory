@@ -7,4 +7,6 @@ authRouter.get("/register", authController.registerGet);
 authRouter.get("/login", authController.loginGet);
 authRouter.get("/dashboard", authController.dashboardGet);
 
+authRouter.post("/register", authController.registerPost);
+
 module.exports = authRouter
