@@ -1,4 +1,4 @@
-const db = require("../db/queries");
+const db = require("../config/db/queries");
 const { formattedTitle } = require("../utils/titleFormatter");
 
 exports.productsListGet = async (req, res, next) => {

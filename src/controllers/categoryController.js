@@ -1,4 +1,4 @@
-const db = require("../db/queries");
+const db = require("../config/db/queries");
 const { body, validationResult, matchedData } = require("express-validator");
 
 const alphaErr = "must only contain letters";
