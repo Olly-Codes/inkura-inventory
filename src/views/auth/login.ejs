@@ -8,6 +8,7 @@
             <p>Login</p>
         </div>
         <div class="login-form-containter">
+            <%- include("../partials/errors.ejs") %>
             <%- include("../partials/flash.ejs") %>
             <form action="/auth/login" method="POST">
                 <div class="email-container">
