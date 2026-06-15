@@ -3,3 +3,9 @@
       <li class="form-success"><%= messages.success_msg %></li>
   </ul>
 <% } %>
+
+<% if (messages.error) {%>
+  <ul class="flash-wrapper">
+      <li class="form-error"><%= messages.error %></li>
+  </ul>
+<% } %>
