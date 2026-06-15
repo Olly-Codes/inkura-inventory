@@ -41,18 +41,26 @@
             <li>
                 <a href="/" class="<%= activePage === "home" ? "active" : "" %>">Home</a>
             </li>
-            <li>
-                <a href="/categories" class="<%= activePage === "categories" ? "active" : "" %>">Categories</a>
-            </li>
+            <% if (currentUser && currentUser.role === "ADMIN") { %>
+                <li>
+                    <a href="/auth/dashboard" class="<%= activePage === "dashboard" ? "active" : "" %>">Dashboard</a>
+                </li>
+            <% } %>
             <li>
                 <a href="/about" class="<%= activePage === "about" ? "active" : "" %>">About</a>
             </li>
             <li>
                 <a href="/contact" class="<%= activePage === "contact" ? "active" : "" %>">Contact</a>
             </li>
-            <li>
-                <a href="/auth/register" class="sign-up-btn">Sign Up</a>
-            </li>
+            <% if (currentUser) { %>
+                <li>
+                    <a href="/auth/logout" class="logout-btn">Logout</a>
+                </li>
+            <% } else { %>
+                <li>
+                    <a href="/auth/register" class="sign-up-btn">Sign Up</a>
+                </li>
+            <% } %>
         </ul>
     </nav>
 </header>

@@ -40,6 +40,11 @@ app.use(session({
 app.use(passport.session());
 app.use(flash());
 
+app.use((req, res, next) => {
+    res.locals.currentUser = req.user || null;
+    next();
+});
+
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
