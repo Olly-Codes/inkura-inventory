@@ -5,9 +5,10 @@
     <%- include("../partials/header.ejs") %>
     <div class="register-content content">
         <div class="register-title-container">
+            <h1>Create Account</h1>
             <p>Register</p>
         </div>
-        <div class="register-form-containter">
+        <div class="register-form-container">
             <%- include("../partials/errors.ejs") %>
             <form action="/auth/register" method="POST">
                 <div class="username-container">
@@ -30,7 +31,7 @@
                     <input type="submit" value="Register">
                 </div>
                 <div class="register-extra-container">
-                    <a href="/auth/login">Already registered? Login here</a>
+                    Already registered?<a href="/auth/login">Login here</a>
                 </div>
             </form>
         </div>

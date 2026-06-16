@@ -594,6 +594,87 @@ input[type="checkbox"] {
     color: var(--text-muted);
 }
 
+/* ----- REGISTER */
+.register-content {
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.register-title-container {
+    width: 100%;
+    padding: 50px 50px 20px 50px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-strong);
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.register-title-container h1 {
+    color: var(--accent);
+}
+
+.register-form-container {
+    width: 100%;
+}
+
+.register-form-container form {
+    width: 400px;
+    padding: 0 0 0 50px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.register-form-container form label {
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+}
+
+.register-form-container label:first-child {
+    margin-top: 10px;
+}
+
+.register-form-container form input[type="text"],
+.register-form-container form input[type="email"],
+.register-form-container form input[type="password"] {
+    font-size: 1rem;
+    padding: 10px 12px;
+    background-color: var(--border-strong);
+    color: var(--text-primary);
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--border-strong);
+}
+
+.username-container, .email-container, .password-container, .confirm-password-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-btn-container input {
+    padding: 10px 16px;
+    background-color: var(--accent);
+    color: var(--text-primary);
+    outline: none;
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.register-extra-container {
+    color: var(--text-muted);
+}
+
+.register-extra-container a {
+    color: var(--accent);
+    margin-left: 5px;
+    text-decoration: none;
+}
+
 /* ----- FOOTER */
 .site-footer {
     background-color: var(--bg-surface);
