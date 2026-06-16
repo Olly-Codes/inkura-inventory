@@ -87,6 +87,33 @@ const deleteCategory = async (category_id) => {
     );
 }
 
+const getTotalManga = async () => {
+    const { rows } = await pool.query(`
+        SELECT SUM(product_quantity)
+        FROM products;
+        `
+    );
+    return parseInt(rows[0].sum);
+}
+
+const getTotalCategories = async () => {
+    const { rows } = await pool.query(`
+        SELECT COUNT(*)
+        FROM categories;
+        `
+    );
+    return parseInt(rows[0].count);
+}
+
+const getTotalAuthors = async () => {
+    const { rows } = await pool.query(`
+        SELECT COUNT(*)
+        FROM authors;
+        `
+    );
+    return parseInt(rows[0].count);
+}
+
 /* ----- AUTH */
 const getUserByEmail = async (email) => {
     const { rows } = await pool.query(`
@@ -122,5 +149,8 @@ module.exports = {
     deleteCategory,
     getUserByEmail,
     getUserById,
-    insertUser
+    insertUser,
+    getTotalManga,
+    getTotalCategories,
+    getTotalAuthors
 }

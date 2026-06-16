@@ -42,9 +42,19 @@ exports.loginGet = async (req, res, next) => {
 
 exports.dashboardGet = async (req, res, next) => {
     try {
+        const [totalManga, totalCategories, totalAuthors] = await Promise.all([
+            db.getTotalManga(),
+            db.getTotalCategories(),
+            db.getTotalAuthors()
+        ]);
         res.render("auth/dashboard", {
             title: "Dashboard", 
-            activePage: "dashboard" 
+            activePage: "dashboard",
+            stats: [
+                { label: "Total manga", value: totalManga },
+                { label: "Categories", value: totalCategories },
+                { label: "Authors", value: totalAuthors }
+            ]
         });
     } catch (err) {
         next(err);
