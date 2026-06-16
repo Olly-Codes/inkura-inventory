@@ -594,14 +594,14 @@ input[type="checkbox"] {
     color: var(--text-muted);
 }
 
-/* ----- REGISTER */
-.register-content {
+/* ----- REGISTER & LOGIN */
+.register-content, .login-content {
     width: 90%;
     height: 100vh;
     margin: 0 auto;
 }
 
-.register-title-container {
+.register-title-container, .login-title-container {
     width: 100%;
     padding: 50px 50px 20px 50px;
     margin-bottom: 20px;
@@ -610,15 +610,15 @@ input[type="checkbox"] {
     text-transform: uppercase;
 }
 
-.register-title-container h1 {
+.register-title-container h1, .login-title-container h1 {
     color: var(--accent);
 }
 
-.register-form-container {
+.register-form-container, .login-form-container {
     width: 100%;
 }
 
-.register-form-container form {
+.register-form-container form, .login-form-container form {
     width: 400px;
     padding: 0 0 0 50px;
 
@@ -627,19 +627,21 @@ input[type="checkbox"] {
     gap: 20px;
 }
 
-.register-form-container form label {
+.register-form-container form label, .login-form-container form label {
     text-transform: uppercase;
     margin-bottom: 8px;
     color: var(--text-muted);
 }
 
-.register-form-container label:first-child {
+.register-form-container label:first-child, .login-form-container label:first-child{
     margin-top: 10px;
 }
 
 .register-form-container form input[type="text"],
 .register-form-container form input[type="email"],
-.register-form-container form input[type="password"] {
+.register-form-container form input[type="password"],
+.login-form-container form input[type="email"],
+.login-form-container form input[type="password"] {
     font-size: 1rem;
     padding: 10px 12px;
     background-color: var(--border-strong);
@@ -654,7 +656,7 @@ input[type="checkbox"] {
     flex-direction: column;
 }
 
-.register-btn-container input {
+.register-btn-container input, .login-btn-container input {
     padding: 10px 16px;
     background-color: var(--accent);
     color: var(--text-primary);
@@ -665,13 +667,12 @@ input[type="checkbox"] {
     transition: all .2s ease;
 }
 
-.register-extra-container {
+.register-extra-container, .login-extra-container {
     color: var(--text-muted);
 }
 
-.register-extra-container a {
+.register-extra-container a, .login-extra-container a {
     color: var(--accent);
-    margin-left: 5px;
     text-decoration: none;
 }
 

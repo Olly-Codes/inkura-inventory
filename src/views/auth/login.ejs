@@ -5,9 +5,10 @@
     <%- include("../partials/header.ejs") %>
     <div class="login-content content">
         <div class="login-title-container">
+            <h1>Account Access</h1>
             <p>Login</p>
         </div>
-        <div class="login-form-containter">
+        <div class="login-form-container">
             <%- include("../partials/errors.ejs") %>
             <%- include("../partials/flash.ejs") %>
             <form action="/auth/login" method="POST">
@@ -23,7 +24,7 @@
                     <input type="submit" value="Login">
                 </div>
                 <div class="login-extra-container">
-                    <a href="/auth/register">Already have an account? Register here</a>
+                    Already have an account? <a href="/auth/register">Register here</a>
                 </div>
             </form>
         </div>
