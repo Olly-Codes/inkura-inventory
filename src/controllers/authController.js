@@ -42,7 +42,10 @@ exports.loginGet = async (req, res, next) => {
 
 exports.dashboardGet = async (req, res, next) => {
     try {
-        res.render("auth/dashboard", { title: "Dashboard", activePage: "" });
+        res.render("auth/dashboard", {
+            title: "Dashboard", 
+            activePage: "dashboard" 
+        });
     } catch (err) {
         next(err);
     }
