@@ -11,6 +11,7 @@ exports.requireAdmin = (req, res, next) => {
     }
     res.status(403).render("error", {
         title: "Error 403",
-        message: "You are not authorized"
+        message: "Access denied. You do not have the required permissions to view this page",
+        activePage: ""
     });
 }
