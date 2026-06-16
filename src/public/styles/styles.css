@@ -744,6 +744,38 @@ input[type="checkbox"] {
     display: none;
 }
 
+/* ----- ERRORS */
+.error-content {
+    width: 90%;
+    height: 80vh;
+    margin: 0 auto;
+
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.error-content h1 {
+    color: var(--text-primary);
+}
+
+.error-content a {
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.error-content a button {
+    padding: 10px 12px;
+    outline: none;
+    border: 1px solid var(--accent);
+    cursor: pointer;
+    transition: all .2s ease;
+    border-radius: 5px;
+    background-color: var(--accent);
+    color: var(--text-primary);
+}
+
 @media (max-width: 768px) {
     .navigation {
         padding: 0 30px;
