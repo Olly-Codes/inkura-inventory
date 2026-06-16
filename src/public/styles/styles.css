@@ -23,7 +23,9 @@
     --text-dead: #333333;
 
     --accent: #e2171d;
-    --accent-tint: rgba(226, 23, 29, 0.08);
+    --accent-tint: rgba(226, 23, 29, 0.2);
+
+    --success: rgba(76, 175, 125, 0.2);
 }
 
 body, html {
@@ -414,7 +416,7 @@ input[type="checkbox"] {
     padding: 6px 9px;
     color: var(--text-primary);
     border-radius: 5px;
-    background-color: var(--accent);
+    background-color: var(--accent-tint);
 }
 
 .categories-container {
@@ -430,7 +432,7 @@ input[type="checkbox"] {
     grid-template-columns: 1fr 200px auto;
     align-items: center;
     border-bottom: 1px solid var(--border-strong);
-    padding: 15px;
+    padding: 15px 15px 15px 40px;
 }
 
 .category-title {
@@ -533,6 +535,7 @@ input[type="checkbox"] {
 
 .errors-wrapper {
     width: 100%;
+    padding-left: 50px;
     list-style: none;
 
     display: flex;
@@ -544,7 +547,7 @@ input[type="checkbox"] {
     padding: 6px 9px;
     color: var(--text-primary);
     border-radius: 5px;
-    background-color: var(--accent);
+    background-color: var(--accent-tint);
 }
 
 .error-container {
@@ -553,7 +556,7 @@ input[type="checkbox"] {
     padding: 6px 9px;
     color: var(--text-primary);
     border-radius: 5px;
-    background-color: var(--accent);
+    background-color: var(--accent-tint);
 }
 
 /* ----- ABOUT */
@@ -802,6 +805,19 @@ input[type="checkbox"] {
     border-radius: 5px;
     background-color: var(--accent);
     color: var(--text-primary);
+}
+
+/* ----- FLASH MESSAGES */
+.flash-wrapper {
+    width: 100%;
+    padding-left: 50px;
+    list-style-type: none;
+}
+
+.form-success {
+    background-color: var(--success);
+    color: var(--text-primary);
+    padding: 6px 9px;
 }
 
 @media (max-width: 768px) {
