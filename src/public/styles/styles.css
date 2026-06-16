@@ -106,6 +106,28 @@ body, html {
     opacity: 1;
 }
 
+.auth-btn {
+    padding: 7px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+.auth-btn::after {
+    content: none !important;
+}
+
+.auth-btn:hover {
+    color: var(--text-primary) !important;
+    opacity: 0.8;
+}
+
+.sign-up-btn, .logout-btn {
+    background-color: var(--accent);
+    color: var(--text-primary) !important;
+    border: 1px solid var(--accent);
+}
+
 .logo-jap {
     font-size: 1.5rem;
     font-weight: bold;
