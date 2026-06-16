@@ -5,7 +5,41 @@
     <%- include("../partials/header.ejs") %>
     <div class="dashboard-content content">
         <div class="dashboard-title-container">
-            <p>Dashboard</p>
+            <h1>Dashboard</h1>
+            <% if (currentUser) { %>
+                <p>Welcome back, <%= currentUser.username %></p>
+            <% } else { %>
+                <p>Welcome back</p>
+            <% } %>
+            <section class="stats-overview-section">
+                <p class="overview-title">Overview</p>
+                <div class="stats-overview-container">
+                    <% if (stats.length > 0) { %>
+                        <% stats.forEach((stat) => { %>
+                            <div class="stat">
+                                <p class="stat-label"><%= stat.label %></p>
+                                <p class="stat-value"><%= stat.value %></p>
+                            </div>
+                        <% }) %>
+                    <% } else { %>
+                        <p>No stats yet</p>
+                    <% } %>
+                </div>
+            </section>
+            <section class="manage-section">
+                <p class="manage-title">Manage</p>
+                <div class="categories-container">
+                    <div class="manage-info">
+                        <p>Categories</p>
+                        <p>Manage existing categories.</p>
+                    </div>
+                    <div class="manage-btn">
+                        <a href="/categories">
+                            <button>Manage</button>
+                        </a>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
     <%- include("../partials/footer.ejs") %>
