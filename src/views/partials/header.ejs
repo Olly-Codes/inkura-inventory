@@ -24,15 +24,26 @@
             <li>
                 <a href="/">Home</a>
             </li>
-            <li>
-                <a href="/categories">Categories</a>
-            </li>
+            <% if (currentUser && currentUser.role === "ADMIN") { %>
+                <li>
+                    <a href="/auth/dashboard">Dashboard</a>
+                </li>
+            <% } %>
             <li>
                 <a href="/about">About</a>
             </li>
             <li>
                 <a href="/contact">Contact</a>
             </li>
+            <% if (currentUser) { %>
+                <li>
+                    <a href="/auth/logout" class="auth-btn logout-btn">Logout</a>
+                </li>
+            <% } else { %>
+                <li>
+                    <a href="/auth/register" class="auth-btn sign-up-btn">Sign Up</a>
+                </li>
+            <% } %>
         </div>
 
         <div id="menuOverlay" class="overlay"></div>
