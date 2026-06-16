@@ -9,7 +9,7 @@ authRouter.get("/login", redirectIfAuth, authController.loginGet);
 authRouter.get("/dashboard", requireAdmin, authController.dashboardGet);
 authRouter.get("/logout", authController.logoutGet);
 
-authRouter.post("/register", authController.registerPost);
-authRouter.post("/login", authController.loginPost);
+authRouter.post("/register", redirectIfAuth, authController.registerPost);
+authRouter.post("/login", redirectIfAuth, authController.loginPost);
 
 module.exports = authRouter
