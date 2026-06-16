@@ -12,7 +12,7 @@ Inkura allows users to browse manga, filter and sort by category and price, and 
 <br>
 
 ## Admin Dashboard
-<img width="1920" height="1161" alt="Inkura-Dashboard" src="https://github.com/user-attachments/assets/527c97c2-074a-44d2-b3c8-90e9ef01ecb2" />
+<img width="1920" height="1161" alt="Inkura-Dashboard" src="https://github.com/user-attachments/assets/09769351-0e62-458e-a0d4-73b869d7db67" />
 <br>
 
 ## Categories
