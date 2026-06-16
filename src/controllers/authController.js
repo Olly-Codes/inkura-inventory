@@ -51,7 +51,7 @@ exports.dashboardGet = async (req, res, next) => {
             title: "Dashboard", 
             activePage: "dashboard",
             stats: [
-                { label: "Total manga", value: totalManga },
+                { label: "Total Stock", value: totalManga },
                 { label: "Categories", value: totalCategories },
                 { label: "Authors", value: totalAuthors }
             ]
