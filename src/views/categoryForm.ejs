@@ -6,6 +6,7 @@
     <div class="form-content content">
         <div class="add-title-container">
             <h1>Add Category</h1>
+            <p>New Category</p>
         </div>
         <%- include("partials/errors.ejs") %>
         <form action="/categories" method="POST">
@@ -15,7 +16,9 @@
             <label for="categoryDesc">Description:</label>
             <textarea name="categoryDesc" id="category-description" placeholder="Description of category" required></textarea>
 
-            <button class="submit-btn" type="submit">Submit</button>
+            <div class="submit-category-container">
+                <button class="submit-btn" type="submit">Submit</button>
+            </div>
         </form>
     </div>
     <%- include("./partials/footer.ejs") %>

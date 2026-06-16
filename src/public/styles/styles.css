@@ -473,17 +473,17 @@ input[type="checkbox"] {
     padding: 50px 50px 20px 50px;
     margin-bottom: 20px;
     border-bottom: 1px solid var(--border-strong);
+    color: var(--text-muted);
+    text-transform: uppercase;
 }
 
 .form-content h1 {
-    color: var(--text-primary);
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--accent);
 }
 
 .form-content form {
     width: 400px;
+    padding-left: 50px;
     color: var(--text-muted);
 
     display: flex;
@@ -495,7 +495,7 @@ input[type="checkbox"] {
 }
 
 #category-name, #category-description {
-    background-color: var(--text-muted);
+    background-color: var(--border-strong);
     padding: 10px;
     font-size: 1rem;
     border-radius: 5px;
@@ -509,12 +509,18 @@ input[type="checkbox"] {
     height: 150px;
 }
 
+.submit-category-containter {
+    width: 100%;
+
+    display: flex;
+}
+
 .submit-btn {
-    padding: 10px 12px;
-    background-color: var(--bg-base);
+    padding: 10px 16px;
+    background-color: var(--accent);
     color: var(--text-primary);
     outline: none;
-    border: 1px solid var(--border-strong);
+    border: 1px solid var(--accent);
     cursor: pointer;
     font-weight: bold;
     border-radius: 5px;
