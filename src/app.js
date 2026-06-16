@@ -71,7 +71,8 @@ app.use((err, req, res, next) => {
 
     res.status(statusCode).render("error", {
         title: `Error ${statusCode}`,
-        message: errorMessage
+        message: errorMessage,
+        activePage: ""
     });
 });
 
